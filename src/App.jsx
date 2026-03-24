@@ -32,6 +32,7 @@ function DetailSection({ title, children }) {
 
 export default function App() {
   const [selectedDay, setSelectedDay] = useState(null);
+  const [showFlightDetails, setShowFlightDetails] = useState(false);
 
   useEffect(() => {
     document.body.classList.toggle("overlay-open", Boolean(selectedDay));
@@ -51,6 +52,17 @@ export default function App() {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [selectedDay]);
+
+  useEffect(() => {
+    setShowFlightDetails(false);
+  }, [selectedDay]);
+
+  const handleOpenDay = (item) => {
+    setSelectedDay(item);
+    setShowFlightDetails(false);
+  };
+
+  const canToggleFlight = selectedDay?.day === 1 || selectedDay?.day === 12;
 
   return (
     <>
@@ -80,7 +92,7 @@ export default function App() {
                   key={item.day}
                   type="button"
                   className={`roadmap-item ${isActive ? "active" : ""}`}
-                  onClick={() => setSelectedDay(item)}
+                  onClick={() => handleOpenDay(item)}
                   aria-label={`Obrir detalls del dia ${item.day}`}
                 >
                   <span className="roadmap-dot" />
@@ -172,37 +184,51 @@ export default function App() {
                     <p className="note">{selectedDay.notes}</p>
                   </DetailSection>
 
-                  {selectedDay.flight && (
+                  {canToggleFlight && selectedDay.flight && (
                     <DetailSection title={selectedDay.flight.label}>
-                      <div className="flight-detail-grid">
-                        <div className="sleep-box">
-                          <div className="sleep-title">
-                            <strong className="sleep-name">Ruta</strong>
-                          </div>
-                          <p className="note">{selectedDay.flight.details.route}</p>
-                        </div>
+                      <button
+                        type="button"
+                        className="flight-toggle-btn"
+                        onClick={() => setShowFlightDetails((prev) => !prev)}
+                        aria-expanded={showFlightDetails}
+                      >
+                        <Plane size={16} />
+                        {showFlightDetails
+                          ? "Ocultar info del vuelo"
+                          : "Ver info del vuelo"}
+                      </button>
 
-                        <div className="sleep-box">
-                          <div className="sleep-title">
-                            <strong className="sleep-name">Tram 1</strong>
+                      {showFlightDetails && (
+                        <div className="flight-detail-grid">
+                          <div className="sleep-box">
+                            <div className="sleep-title">
+                              <strong className="sleep-name">Ruta</strong>
+                            </div>
+                            <p className="note">{selectedDay.flight.details.route}</p>
                           </div>
-                          <p className="note">{selectedDay.flight.details.segment1}</p>
-                        </div>
 
-                        <div className="sleep-box">
-                          <div className="sleep-title">
-                            <strong className="sleep-name">Escala</strong>
+                          <div className="sleep-box">
+                            <div className="sleep-title">
+                              <strong className="sleep-name">Tramo 1</strong>
+                            </div>
+                            <p className="note">{selectedDay.flight.details.segment1}</p>
                           </div>
-                          <p className="note">{selectedDay.flight.details.layover}</p>
-                        </div>
 
-                        <div className="sleep-box">
-                          <div className="sleep-title">
-                            <strong className="sleep-name">Tram 2</strong>
+                          <div className="sleep-box">
+                            <div className="sleep-title">
+                              <strong className="sleep-name">Escala</strong>
+                            </div>
+                            <p className="note">{selectedDay.flight.details.layover}</p>
                           </div>
-                          <p className="note">{selectedDay.flight.details.segment2}</p>
+
+                          <div className="sleep-box">
+                            <div className="sleep-title">
+                              <strong className="sleep-name">Tramo 2</strong>
+                            </div>
+                            <p className="note">{selectedDay.flight.details.segment2}</p>
+                          </div>
                         </div>
-                      </div>
+                      )}
                     </DetailSection>
                   )}
 
