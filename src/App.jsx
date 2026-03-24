@@ -86,10 +86,7 @@ export default function App() {
                   <span className="roadmap-dot" />
                   <span className="roadmap-date">{item.date}</span>
 
-                  <span className="roadmap-main">
-                    <span className="roadmap-label">{item.title}</span>
-                    <span className="roadmap-sub">{item.region}</span>
-                  </span>
+                  <span className="roadmap-label">{item.title}</span>
 
                   <span className="roadmap-icon" aria-hidden="true">
                     <Icon size={14} />
