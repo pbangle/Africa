@@ -1,9 +1,10 @@
 export const tripMeta = {
   title: "Namíbia 4x4 amb els amics",
-  subtitle:
-    "Una road trip èpica creuant Namíbia en 4x4: dunes infinites, pistes remotes, nits sota les estrelles i safaris salvatges.",
+  subtitle: "12 dies entre dunes, costa, granits, càmpings i safari",
   dateRange: "01/04 → 13/04",
-  summaryPill: "12 dies · dunes, costa i safari",
+  totalDays: "12 dies",
+  footerNote: "Toca qualsevol dia per obrir-ne els detalls",
+  note: "Als apunts també s’indica que Damaraland es veu dins la part de Spitzkoppe i que es descarta Twyfelfontein.",
 };
 
 export const flights = {
@@ -24,13 +25,12 @@ export const flights = {
 export const itinerary = [
   {
     day: 1,
+    date: "01/04",
     title: "Barcelona → Windhoek",
     region: "Dia de viatge",
     stay: "En trànsit",
     status: "Vol reservat",
     icon: "Plane",
-    gradient:
-      "linear-gradient(135deg, rgba(127,29,29,0.26), rgba(194,65,12,0.20), rgba(245,158,11,0.18))",
     summary: "Dia principal de vol.",
     plan: [
       "16:20 vol de Barcelona a Windhoek (WDH)",
@@ -44,13 +44,12 @@ export const itinerary = [
   },
   {
     day: 2,
+    date: "02/04",
     title: "Arribada a Windhoek",
     region: "Windhoek",
     stay: "Windhoek",
     status: "Reserva sol·licitada",
     icon: "Car",
-    gradient:
-      "linear-gradient(135deg, rgba(153,27,27,0.22), rgba(194,65,12,0.18), rgba(234,179,8,0.16))",
     summary: "Aterrada, compres i inici tranquil.",
     plan: [
       "08:00 arribada a WDH",
@@ -64,13 +63,12 @@ export const itinerary = [
   },
   {
     day: 3,
+    date: "03/04",
     title: "Ruta cap a Sossusvlei",
     region: "Windhoek → Sossusvlei",
     stay: "Sossus Oasis Campsite",
     status: "Reservat",
     icon: "Car",
-    gradient:
-      "linear-gradient(135deg, rgba(120,53,15,0.24), rgba(217,119,6,0.18), rgba(234,179,8,0.16))",
     summary: "Gran dia de transfer pel desert.",
     plan: [
       "05:30 despertar",
@@ -84,13 +82,12 @@ export const itinerary = [
   },
   {
     day: 4,
+    date: "04/04",
     title: "Imprescindibles de Namib-Naukluft",
     region: "Sossusvlei / Sesriem",
     stay: "Sossus Oasis Campsite",
     status: "Reservat",
     icon: "Mountain",
-    gradient:
-      "linear-gradient(135deg, rgba(146,64,14,0.24), rgba(194,65,12,0.18), rgba(250,204,21,0.18))",
     summary: "Dia clàssic de dunes.",
     plan: [
       "06:00 entrada al parc nacional",
@@ -104,13 +101,12 @@ export const itinerary = [
   },
   {
     day: 5,
+    date: "05/04",
     title: "Solitaire + dia de càmping tranquil",
     region: "Solitaire / carretera del desert",
     stay: "Camp Gecko",
     status: "Reservat",
     icon: "TreePalm",
-    gradient:
-      "linear-gradient(135deg, rgba(154,52,18,0.24), rgba(153,27,27,0.16), rgba(245,158,11,0.16))",
     summary: "Parada de carretera i dia de desconnexió.",
     plan: [
       "Parada a Solitaire",
@@ -124,13 +120,12 @@ export const itinerary = [
   },
   {
     day: 6,
+    date: "06/04",
     title: "Walvis Bay / Sandwich Harbour",
     region: "Walvis Bay / Swakopmund",
     stay: "Alte Brücke",
     status: "Reservat",
     icon: "Waves",
-    gradient:
-      "linear-gradient(135deg, rgba(30,64,175,0.20), rgba(8,145,178,0.18), rgba(245,158,11,0.16))",
     summary: "Costa + dunes + foques.",
     plan: [
       "Anar cap a Walvis Bay",
@@ -156,13 +151,12 @@ export const itinerary = [
   },
   {
     day: 7,
+    date: "07/04",
     title: "Swakopmund → Spitzkoppe",
     region: "Swakopmund / Spitzkoppe",
     stay: "Spitzkoppe Rest Camp",
     status: "Reservat",
     icon: "Mountain",
-    gradient:
-      "linear-gradient(135deg, rgba(127,29,29,0.22), rgba(194,65,12,0.18), rgba(120,113,108,0.18))",
     summary: "Encàrrecs, carretera i posta de sol.",
     plan: [
       "Visitar el poble",
@@ -190,13 +184,12 @@ export const itinerary = [
   },
   {
     day: 8,
+    date: "08/04",
     title: "Spitzkoppe → Skeleton Coast",
     region: "Skeleton Coast",
     stay: "NWR Mile 108",
     status: "Pagament pendent",
     icon: "Car",
-    gradient:
-      "linear-gradient(135deg, rgba(41,37,36,0.26), rgba(71,85,105,0.18), rgba(245,158,11,0.14))",
     summary: "Paisatge de roca fins a la costa dels naufragis.",
     plan: [
       "Matí per Spitzkoppe si hi ha temps",
@@ -223,13 +216,12 @@ export const itinerary = [
   },
   {
     day: 9,
+    date: "09/04",
     title: "Cape Cross + Damaraland",
     region: "Cape Cross / zona Hoada",
     stay: "Hoada Campsite",
     status: "Reservat",
     icon: "Waves",
-    gradient:
-      "linear-gradient(135deg, rgba(23,37,84,0.22), rgba(3,105,161,0.18), rgba(245,158,11,0.14))",
     summary: "Foques, costa i ambient de desert.",
     plan: [
       "Colònia de foques de Cape Cross",
@@ -243,13 +235,12 @@ export const itinerary = [
   },
   {
     day: 10,
+    date: "10/04",
     title: "Etosha Oest",
     region: "Etosha",
     stay: "Olifantsrus Camp",
     status: "Reservat",
     icon: "ShieldCheck",
-    gradient:
-      "linear-gradient(135deg, rgba(113,63,18,0.24), rgba(180,83,9,0.18), rgba(245,158,11,0.16))",
     summary: "Comença la part safari.",
     plan: [
       "Entrar a la zona d’Etosha",
@@ -262,13 +253,12 @@ export const itinerary = [
   },
   {
     day: 11,
+    date: "11/04",
     title: "Etosha Central",
     region: "Etosha",
     stay: "Okaukuejo Resort",
     status: "Reservat",
     icon: "ShieldCheck",
-    gradient:
-      "linear-gradient(135deg, rgba(133,77,14,0.22), rgba(194,65,12,0.18), rgba(239,68,68,0.14))",
     summary: "Un altre gran dia de safari.",
     plan: [
       "Continuar travessant Etosha",
@@ -281,13 +271,12 @@ export const itinerary = [
   },
   {
     day: 12,
+    date: "12/04",
     title: "Etosha → Waterberg",
     region: "Etosha / Waterberg",
     stay: "Omatosu Safari Camp",
     status: "2n pagament pendent",
     icon: "Car",
-    gradient:
-      "linear-gradient(135deg, rgba(127,29,29,0.22), rgba(154,52,18,0.18), rgba(120,113,108,0.16))",
     summary: "Últim gran trasllat del recorregut.",
     plan: [
       "Conduir des d’Etosha cap a Waterberg",
