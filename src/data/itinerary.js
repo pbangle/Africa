@@ -1,5 +1,5 @@
 export const tripMeta = {
-  title: "Namíbia 4x4 amb els amics",
+  title: "Namíbia 4x4",
   subtitle: "12 dies entre dunes, costa, granits, càmpings i safari",
   dateRange: "01/04 → 13/04",
   totalDays: "12 dies",
